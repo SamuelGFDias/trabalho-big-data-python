@@ -1,0 +1,501 @@
+Cidade,Região,Data Criação,Data Limite,Dias para Entrega
+Porto Alegre,Interior,2024-02-22,2024-02-29,7
+São Paulo,Metropolitana,2024-04-05,2024-04-14,9
+Fortaleza,Interior,2024-02-07,2024-02-09,2
+Curitiba,Interior,2024-04-02,2024-04-09,7
+Porto Alegre,Interior,2024-01-04,2024-01-11,7
+Fortaleza,Interior,2024-01-18,2024-01-26,8
+Porto Alegre,Interior,2024-02-24,2024-02-25,1
+Belo Horizonte,Metropolitana,2024-03-30,2024-04-13,14
+Salvador,Metropolitana,2024-01-22,2024-01-26,4
+Recife,Metropolitana,2024-03-05,2024-03-12,7
+Brasília,Interior,2024-02-01,2024-02-10,9
+Curitiba,Interior,2024-04-05,2024-04-12,7
+Salvador,Interior,2024-04-06,2024-04-09,3
+Manaus,Interior,2024-03-19,2024-03-21,2
+Curitiba,Metropolitana,2024-02-11,2024-02-26,15
+Belo Horizonte,Metropolitana,2024-03-18,2024-03-20,2
+Rio de Janeiro,Metropolitana,2024-01-01,2024-01-04,3
+Porto Alegre,Interior,2024-01-06,2024-01-08,2
+Curitiba,Interior,2024-03-19,2024-03-21,2
+Rio de Janeiro,Interior,2024-01-17,2024-01-29,12
+Fortaleza,Interior,2024-02-04,2024-02-15,11
+Manaus,Interior,2024-01-20,2024-01-22,2
+Recife,Metropolitana,2024-03-01,2024-03-09,8
+Recife,Metropolitana,2024-01-16,2024-01-25,9
+Fortaleza,Metropolitana,2024-03-28,2024-04-10,13
+Manaus,Metropolitana,2024-01-02,2024-01-04,2
+Manaus,Interior,2024-04-05,2024-04-16,11
+Porto Alegre,Metropolitana,2024-02-11,2024-02-14,3
+Porto Alegre,Metropolitana,2024-03-01,2024-03-05,4
+Curitiba,Interior,2024-01-06,2024-01-19,13
+Porto Alegre,Interior,2024-02-22,2024-02-25,3
+Manaus,Metropolitana,2024-01-04,2024-01-17,13
+Recife,Interior,2024-02-28,2024-03-02,3
+São Paulo,Metropolitana,2024-01-24,2024-02-05,12
+Rio de Janeiro,Metropolitana,2024-02-07,2024-02-18,11
+Fortaleza,Metropolitana,2024-04-07,2024-04-18,11
+São Paulo,Metropolitana,2024-01-20,2024-02-02,13
+Brasília,Interior,2024-03-31,2024-04-09,9
+Porto Alegre,Interior,2024-03-15,2024-03-27,12
+Belo Horizonte,Interior,2024-01-18,2024-01-20,2
+Curitiba,Metropolitana,2024-01-27,2024-02-03,7
+Salvador,Metropolitana,2024-03-23,2024-04-06,14
+São Paulo,Metropolitana,2024-03-25,2024-04-07,13
+São Paulo,Metropolitana,2024-01-06,2024-01-13,7
+Manaus,Metropolitana,2024-03-08,2024-03-22,14
+São Paulo,Interior,2024-03-08,2024-03-16,8
+Manaus,Metropolitana,2024-02-18,2024-02-29,11
+Fortaleza,Metropolitana,2024-01-28,2024-02-02,5
+Rio de Janeiro,Metropolitana,2024-01-10,2024-01-18,8
+Rio de Janeiro,Interior,2024-02-25,2024-03-05,9
+Porto Alegre,Metropolitana,2024-02-28,2024-03-11,12
+Fortaleza,Metropolitana,2024-01-19,2024-02-01,13
+Brasília,Metropolitana,2024-03-27,2024-04-01,5
+São Paulo,Interior,2024-02-07,2024-02-12,5
+Curitiba,Interior,2024-03-17,2024-04-01,15
+Salvador,Metropolitana,2024-02-13,2024-02-20,7
+Porto Alegre,Interior,2024-02-18,2024-03-02,13
+Fortaleza,Interior,2024-01-10,2024-01-25,15
+São Paulo,Metropolitana,2024-03-12,2024-03-27,15
+Rio de Janeiro,Metropolitana,2024-03-02,2024-03-11,9
+Brasília,Interior,2024-02-24,2024-03-07,12
+Curitiba,Interior,2024-03-15,2024-03-19,4
+Belo Horizonte,Interior,2024-02-29,2024-03-11,11
+Fortaleza,Metropolitana,2024-02-13,2024-02-21,8
+São Paulo,Interior,2024-01-07,2024-01-22,15
+São Paulo,Interior,2024-01-01,2024-01-15,14
+São Paulo,Metropolitana,2024-04-07,2024-04-12,5
+Salvador,Interior,2024-04-07,2024-04-17,10
+Porto Alegre,Metropolitana,2024-03-17,2024-04-01,15
+São Paulo,Interior,2024-04-04,2024-04-16,12
+Rio de Janeiro,Interior,2024-02-29,2024-03-03,3
+Brasília,Interior,2024-02-10,2024-02-15,5
+São Paulo,Interior,2024-02-11,2024-02-13,2
+Curitiba,Interior,2024-02-12,2024-02-19,7
+Recife,Interior,2024-02-17,2024-02-25,8
+Brasília,Metropolitana,2024-01-26,2024-01-28,2
+Salvador,Metropolitana,2024-01-16,2024-01-29,13
+Salvador,Metropolitana,2024-03-31,2024-04-13,13
+Belo Horizonte,Interior,2024-03-31,2024-04-11,11
+Brasília,Metropolitana,2024-03-26,2024-04-04,9
+Fortaleza,Interior,2024-03-03,2024-03-14,11
+Rio de Janeiro,Metropolitana,2024-01-03,2024-01-07,4
+Salvador,Interior,2024-01-09,2024-01-11,2
+Salvador,Interior,2024-03-25,2024-04-03,9
+Porto Alegre,Interior,2024-04-01,2024-04-04,3
+Manaus,Interior,2024-01-31,2024-02-06,6
+Recife,Interior,2024-01-01,2024-01-05,4
+Porto Alegre,Metropolitana,2024-03-01,2024-03-12,11
+São Paulo,Metropolitana,2024-03-16,2024-03-19,3
+Salvador,Metropolitana,2024-03-22,2024-03-29,7
+Curitiba,Metropolitana,2024-01-08,2024-01-20,12
+Brasília,Metropolitana,2024-02-15,2024-03-01,15
+Curitiba,Metropolitana,2024-03-02,2024-03-07,5
+Belo Horizonte,Interior,2024-01-30,2024-02-08,9
+Rio de Janeiro,Interior,2024-01-27,2024-02-06,10
+Belo Horizonte,Interior,2024-01-28,2024-02-11,14
+São Paulo,Metropolitana,2024-01-26,2024-02-03,8
+São Paulo,Metropolitana,2024-03-31,2024-04-05,5
+Recife,Metropolitana,2024-04-03,2024-04-10,7
+Salvador,Metropolitana,2024-01-10,2024-01-12,2
+Recife,Interior,2024-03-02,2024-03-13,11
+Porto Alegre,Metropolitana,2024-03-12,2024-03-16,4
+Porto Alegre,Interior,2024-01-11,2024-01-21,10
+Brasília,Interior,2024-01-22,2024-01-24,2
+Brasília,Metropolitana,2024-03-01,2024-03-16,15
+Fortaleza,Metropolitana,2024-01-03,2024-01-15,12
+Porto Alegre,Interior,2024-01-29,2024-02-09,11
+Porto Alegre,Metropolitana,2024-03-03,2024-03-13,10
+Porto Alegre,Metropolitana,2024-03-06,2024-03-10,4
+Recife,Metropolitana,2024-01-14,2024-01-19,5
+Rio de Janeiro,Metropolitana,2024-04-10,2024-04-24,14
+Belo Horizonte,Interior,2024-01-17,2024-01-26,9
+Belo Horizonte,Interior,2024-03-30,2024-04-10,11
+Fortaleza,Interior,2024-01-17,2024-01-26,9
+Brasília,Interior,2024-02-09,2024-02-23,14
+Belo Horizonte,Metropolitana,2024-01-06,2024-01-13,7
+Salvador,Interior,2024-01-27,2024-02-05,9
+São Paulo,Interior,2024-03-16,2024-03-19,3
+Brasília,Metropolitana,2024-01-05,2024-01-18,13
+Porto Alegre,Interior,2024-01-31,2024-02-07,7
+Manaus,Interior,2024-01-20,2024-01-31,11
+Curitiba,Interior,2024-03-06,2024-03-16,10
+Rio de Janeiro,Interior,2024-04-09,2024-04-10,1
+São Paulo,Interior,2024-02-12,2024-02-14,2
+Brasília,Interior,2024-01-31,2024-02-14,14
+Rio de Janeiro,Interior,2024-04-02,2024-04-12,10
+Salvador,Interior,2024-03-11,2024-03-21,10
+Curitiba,Interior,2024-02-18,2024-03-04,15
+Recife,Interior,2024-01-23,2024-01-31,8
+Curitiba,Metropolitana,2024-03-23,2024-04-02,10
+Recife,Interior,2024-03-08,2024-03-10,2
+Porto Alegre,Metropolitana,2024-02-12,2024-02-14,2
+Porto Alegre,Metropolitana,2024-02-25,2024-02-27,2
+Manaus,Metropolitana,2024-01-17,2024-01-30,13
+Belo Horizonte,Metropolitana,2024-02-09,2024-02-20,11
+Curitiba,Metropolitana,2024-03-16,2024-03-18,2
+Belo Horizonte,Metropolitana,2024-03-27,2024-03-30,3
+Brasília,Interior,2024-01-17,2024-01-31,14
+Recife,Interior,2024-02-23,2024-02-29,6
+Belo Horizonte,Metropolitana,2024-02-13,2024-02-20,7
+Recife,Interior,2024-01-03,2024-01-06,3
+Porto Alegre,Interior,2024-02-06,2024-02-10,4
+Fortaleza,Metropolitana,2024-04-03,2024-04-08,5
+Manaus,Metropolitana,2024-03-11,2024-03-24,13
+Brasília,Metropolitana,2024-02-10,2024-02-16,6
+São Paulo,Metropolitana,2024-01-12,2024-01-21,9
+Fortaleza,Metropolitana,2024-01-01,2024-01-03,2
+Manaus,Metropolitana,2024-02-23,2024-02-29,6
+Manaus,Metropolitana,2024-01-22,2024-02-04,13
+São Paulo,Metropolitana,2024-01-03,2024-01-17,14
+Recife,Interior,2024-02-08,2024-02-23,15
+Fortaleza,Metropolitana,2024-04-10,2024-04-19,9
+Belo Horizonte,Interior,2024-02-04,2024-02-10,6
+Fortaleza,Metropolitana,2024-04-05,2024-04-19,14
+Rio de Janeiro,Metropolitana,2024-01-08,2024-01-17,9
+Salvador,Interior,2024-02-23,2024-02-26,3
+Porto Alegre,Interior,2024-03-02,2024-03-04,2
+Fortaleza,Interior,2024-01-23,2024-01-29,6
+Salvador,Interior,2024-01-13,2024-01-22,9
+Brasília,Metropolitana,2024-01-23,2024-02-02,10
+Recife,Metropolitana,2024-02-23,2024-03-08,14
+São Paulo,Metropolitana,2024-04-09,2024-04-24,15
+Brasília,Metropolitana,2024-01-09,2024-01-15,6
+Manaus,Metropolitana,2024-03-03,2024-03-15,12
+Salvador,Metropolitana,2024-02-03,2024-02-06,3
+Curitiba,Metropolitana,2024-03-28,2024-03-29,1
+Curitiba,Metropolitana,2024-03-30,2024-03-31,1
+Belo Horizonte,Metropolitana,2024-03-20,2024-03-21,1
+Manaus,Metropolitana,2024-01-02,2024-01-14,12
+Porto Alegre,Interior,2024-03-03,2024-03-11,8
+Belo Horizonte,Interior,2024-01-08,2024-01-20,12
+Brasília,Metropolitana,2024-01-30,2024-02-01,2
+Rio de Janeiro,Metropolitana,2024-03-06,2024-03-16,10
+São Paulo,Metropolitana,2024-02-12,2024-02-24,12
+Salvador,Metropolitana,2024-03-05,2024-03-19,14
+Belo Horizonte,Metropolitana,2024-02-15,2024-02-21,6
+Recife,Interior,2024-03-22,2024-03-28,6
+Recife,Metropolitana,2024-03-05,2024-03-16,11
+Porto Alegre,Metropolitana,2024-01-16,2024-01-24,8
+Belo Horizonte,Interior,2024-02-20,2024-02-25,5
+São Paulo,Metropolitana,2024-03-23,2024-03-26,3
+Fortaleza,Metropolitana,2024-04-01,2024-04-02,1
+Recife,Interior,2024-03-07,2024-03-19,12
+São Paulo,Metropolitana,2024-03-30,2024-04-14,15
+Brasília,Metropolitana,2024-03-07,2024-03-11,4
+Porto Alegre,Interior,2024-03-08,2024-03-15,7
+Curitiba,Interior,2024-02-20,2024-03-06,15
+Manaus,Metropolitana,2024-03-02,2024-03-12,10
+Manaus,Interior,2024-03-02,2024-03-07,5
+Manaus,Metropolitana,2024-02-03,2024-02-17,14
+Recife,Metropolitana,2024-01-30,2024-02-12,13
+Fortaleza,Interior,2024-03-20,2024-03-29,9
+Belo Horizonte,Metropolitana,2024-02-25,2024-02-29,4
+Recife,Interior,2024-01-09,2024-01-10,1
+Curitiba,Interior,2024-01-06,2024-01-20,14
+Belo Horizonte,Metropolitana,2024-03-14,2024-03-26,12
+Brasília,Metropolitana,2024-01-03,2024-01-06,3
+Fortaleza,Interior,2024-01-10,2024-01-25,15
+São Paulo,Metropolitana,2024-01-20,2024-01-25,5
+Porto Alegre,Interior,2024-01-31,2024-02-15,15
+Fortaleza,Interior,2024-02-10,2024-02-18,8
+Brasília,Metropolitana,2024-02-20,2024-03-03,12
+Salvador,Interior,2024-04-05,2024-04-10,5
+Brasília,Interior,2024-02-01,2024-02-13,12
+Curitiba,Interior,2024-01-23,2024-02-06,14
+Porto Alegre,Metropolitana,2024-02-02,2024-02-16,14
+Manaus,Interior,2024-02-18,2024-02-23,5
+Rio de Janeiro,Interior,2024-03-28,2024-04-03,6
+Belo Horizonte,Metropolitana,2024-03-06,2024-03-12,6
+Salvador,Interior,2024-03-16,2024-03-22,6
+Recife,Metropolitana,2024-03-01,2024-03-06,5
+Belo Horizonte,Interior,2024-04-04,2024-04-12,8
+Rio de Janeiro,Interior,2024-01-30,2024-02-03,4
+Recife,Metropolitana,2024-02-18,2024-02-28,10
+Manaus,Metropolitana,2024-03-05,2024-03-12,7
+Fortaleza,Metropolitana,2024-03-25,2024-03-27,2
+Belo Horizonte,Metropolitana,2024-01-10,2024-01-22,12
+Brasília,Interior,2024-03-25,2024-03-29,4
+Recife,Interior,2024-01-10,2024-01-24,14
+Recife,Interior,2024-03-30,2024-04-11,12
+Recife,Metropolitana,2024-02-06,2024-02-21,15
+Manaus,Interior,2024-01-18,2024-01-23,5
+Curitiba,Interior,2024-04-09,2024-04-13,4
+Porto Alegre,Interior,2024-04-10,2024-04-13,3
+Porto Alegre,Interior,2024-01-11,2024-01-18,7
+Porto Alegre,Metropolitana,2024-03-26,2024-04-07,12
+Recife,Interior,2024-04-10,2024-04-11,1
+Manaus,Metropolitana,2024-03-20,2024-03-30,10
+Fortaleza,Interior,2024-01-28,2024-01-29,1
+São Paulo,Interior,2024-03-15,2024-03-29,14
+Salvador,Interior,2024-01-20,2024-01-27,7
+Brasília,Metropolitana,2024-03-05,2024-03-08,3
+São Paulo,Interior,2024-04-09,2024-04-11,2
+Salvador,Metropolitana,2024-02-10,2024-02-13,3
+Curitiba,Metropolitana,2024-02-23,2024-03-03,9
+Manaus,Metropolitana,2024-03-07,2024-03-18,11
+Curitiba,Interior,2024-02-05,2024-02-12,7
+Belo Horizonte,Metropolitana,2024-01-27,2024-01-30,3
+Recife,Metropolitana,2024-03-05,2024-03-09,4
+Belo Horizonte,Interior,2024-02-21,2024-02-27,6
+Brasília,Interior,2024-02-16,2024-02-17,1
+Recife,Interior,2024-02-01,2024-02-06,5
+Curitiba,Metropolitana,2024-02-14,2024-02-17,3
+Belo Horizonte,Metropolitana,2024-02-14,2024-02-19,5
+Belo Horizonte,Metropolitana,2024-02-03,2024-02-14,11
+Rio de Janeiro,Metropolitana,2024-01-20,2024-01-21,1
+Recife,Interior,2024-04-04,2024-04-11,7
+Curitiba,Metropolitana,2024-02-09,2024-02-23,14
+Belo Horizonte,Metropolitana,2024-01-27,2024-02-02,6
+Manaus,Metropolitana,2024-02-07,2024-02-12,5
+Manaus,Metropolitana,2024-03-04,2024-03-12,8
+Brasília,Interior,2024-03-26,2024-04-04,9
+Belo Horizonte,Metropolitana,2024-01-15,2024-01-19,4
+Salvador,Interior,2024-03-11,2024-03-21,10
+Curitiba,Metropolitana,2024-02-08,2024-02-14,6
+Porto Alegre,Interior,2024-03-17,2024-03-30,13
+Fortaleza,Interior,2024-01-02,2024-01-12,10
+Belo Horizonte,Interior,2024-02-04,2024-02-17,13
+Rio de Janeiro,Interior,2024-04-07,2024-04-19,12
+Fortaleza,Metropolitana,2024-01-08,2024-01-15,7
+Fortaleza,Interior,2024-03-25,2024-04-08,14
+São Paulo,Interior,2024-01-29,2024-02-13,15
+Brasília,Interior,2024-02-22,2024-02-27,5
+Brasília,Interior,2024-02-20,2024-03-06,15
+Porto Alegre,Metropolitana,2024-03-11,2024-03-18,7
+São Paulo,Metropolitana,2024-02-08,2024-02-22,14
+Belo Horizonte,Metropolitana,2024-04-07,2024-04-11,4
+Belo Horizonte,Interior,2024-02-18,2024-02-19,1
+Salvador,Metropolitana,2024-02-04,2024-02-18,14
+Rio de Janeiro,Metropolitana,2024-02-07,2024-02-18,11
+Curitiba,Interior,2024-04-09,2024-04-19,10
+Brasília,Metropolitana,2024-03-01,2024-03-13,12
+Rio de Janeiro,Metropolitana,2024-03-13,2024-03-27,14
+São Paulo,Metropolitana,2024-01-02,2024-01-12,10
+Brasília,Interior,2024-03-29,2024-04-03,5
+Rio de Janeiro,Interior,2024-02-26,2024-03-10,13
+Brasília,Metropolitana,2024-01-31,2024-02-05,5
+Brasília,Metropolitana,2024-03-14,2024-03-28,14
+Curitiba,Metropolitana,2024-03-23,2024-04-06,14
+Curitiba,Interior,2024-03-20,2024-04-04,15
+Salvador,Interior,2024-03-17,2024-03-28,11
+Rio de Janeiro,Interior,2024-03-05,2024-03-13,8
+Rio de Janeiro,Metropolitana,2024-01-17,2024-01-28,11
+Curitiba,Interior,2024-02-02,2024-02-09,7
+Belo Horizonte,Interior,2024-04-09,2024-04-11,2
+Manaus,Metropolitana,2024-03-24,2024-04-05,12
+Curitiba,Metropolitana,2024-01-13,2024-01-22,9
+Manaus,Metropolitana,2024-03-11,2024-03-21,10
+Curitiba,Metropolitana,2024-03-21,2024-03-29,8
+Porto Alegre,Interior,2024-01-02,2024-01-06,4
+Belo Horizonte,Interior,2024-03-01,2024-03-10,9
+Recife,Metropolitana,2024-03-20,2024-03-31,11
+São Paulo,Interior,2024-03-24,2024-04-08,15
+Belo Horizonte,Metropolitana,2024-04-01,2024-04-03,2
+Rio de Janeiro,Interior,2024-02-08,2024-02-15,7
+Fortaleza,Interior,2024-02-15,2024-02-19,4
+Recife,Interior,2024-01-02,2024-01-11,9
+Salvador,Metropolitana,2024-04-03,2024-04-18,15
+Manaus,Interior,2024-03-30,2024-04-11,12
+Brasília,Interior,2024-01-20,2024-01-21,1
+Salvador,Interior,2024-03-07,2024-03-18,11
+Belo Horizonte,Interior,2024-02-11,2024-02-14,3
+Curitiba,Interior,2024-02-18,2024-03-04,15
+Rio de Janeiro,Interior,2024-02-15,2024-02-19,4
+Recife,Metropolitana,2024-01-22,2024-02-02,11
+Brasília,Interior,2024-02-03,2024-02-09,6
+Curitiba,Interior,2024-03-13,2024-03-16,3
+Curitiba,Interior,2024-03-16,2024-03-20,4
+Recife,Metropolitana,2024-02-01,2024-02-07,6
+Brasília,Metropolitana,2024-01-08,2024-01-22,14
+São Paulo,Interior,2024-02-04,2024-02-19,15
+Curitiba,Metropolitana,2024-03-17,2024-03-27,10
+Curitiba,Metropolitana,2024-01-01,2024-01-10,9
+Rio de Janeiro,Interior,2024-02-11,2024-02-12,1
+Salvador,Metropolitana,2024-03-11,2024-03-21,10
+Belo Horizonte,Interior,2024-03-28,2024-04-01,4
+Manaus,Metropolitana,2024-02-23,2024-02-28,5
+Curitiba,Interior,2024-02-02,2024-02-04,2
+Salvador,Interior,2024-02-07,2024-02-11,4
+Brasília,Interior,2024-03-16,2024-03-27,11
+Salvador,Interior,2024-03-12,2024-03-24,12
+Porto Alegre,Interior,2024-01-02,2024-01-04,2
+Recife,Metropolitana,2024-02-16,2024-03-01,14
+São Paulo,Interior,2024-02-05,2024-02-12,7
+Belo Horizonte,Interior,2024-01-02,2024-01-07,5
+Recife,Interior,2024-02-25,2024-02-26,1
+Manaus,Metropolitana,2024-02-01,2024-02-12,11
+Rio de Janeiro,Metropolitana,2024-04-04,2024-04-18,14
+Belo Horizonte,Metropolitana,2024-01-14,2024-01-16,2
+Recife,Metropolitana,2024-02-20,2024-02-28,8
+Curitiba,Interior,2024-03-29,2024-04-07,9
+Porto Alegre,Interior,2024-03-18,2024-03-20,2
+Curitiba,Interior,2024-03-03,2024-03-17,14
+Fortaleza,Metropolitana,2024-02-14,2024-02-18,4
+Brasília,Interior,2024-01-06,2024-01-21,15
+Belo Horizonte,Metropolitana,2024-02-20,2024-02-29,9
+Porto Alegre,Interior,2024-03-03,2024-03-14,11
+Porto Alegre,Interior,2024-02-07,2024-02-11,4
+São Paulo,Metropolitana,2024-01-16,2024-01-19,3
+Fortaleza,Interior,2024-02-17,2024-02-19,2
+Fortaleza,Interior,2024-03-06,2024-03-14,8
+Fortaleza,Interior,2024-02-05,2024-02-09,4
+Belo Horizonte,Metropolitana,2024-03-29,2024-04-06,8
+São Paulo,Metropolitana,2024-02-16,2024-02-29,13
+Porto Alegre,Interior,2024-01-21,2024-01-31,10
+Belo Horizonte,Metropolitana,2024-04-07,2024-04-22,15
+Rio de Janeiro,Interior,2024-04-04,2024-04-16,12
+Recife,Metropolitana,2024-01-31,2024-02-04,4
+Recife,Interior,2024-02-27,2024-03-05,7
+Recife,Interior,2024-01-12,2024-01-21,9
+Recife,Interior,2024-01-28,2024-02-11,14
+Curitiba,Interior,2024-03-21,2024-03-23,2
+São Paulo,Interior,2024-02-08,2024-02-22,14
+Salvador,Interior,2024-01-02,2024-01-04,2
+Rio de Janeiro,Interior,2024-03-09,2024-03-16,7
+Recife,Metropolitana,2024-02-12,2024-02-23,11
+Manaus,Interior,2024-02-26,2024-03-12,15
+Salvador,Metropolitana,2024-03-29,2024-04-10,12
+Recife,Metropolitana,2024-01-17,2024-01-23,6
+Porto Alegre,Interior,2024-03-13,2024-03-26,13
+Fortaleza,Metropolitana,2024-02-01,2024-02-12,11
+Curitiba,Interior,2024-01-05,2024-01-09,4
+Porto Alegre,Interior,2024-03-03,2024-03-16,13
+Rio de Janeiro,Interior,2024-02-23,2024-03-03,9
+Brasília,Interior,2024-03-18,2024-03-26,8
+Rio de Janeiro,Metropolitana,2024-01-16,2024-01-19,3
+Recife,Metropolitana,2024-03-13,2024-03-24,11
+Salvador,Interior,2024-04-08,2024-04-22,14
+Porto Alegre,Interior,2024-01-18,2024-01-20,2
+São Paulo,Metropolitana,2024-03-01,2024-03-06,5
+Belo Horizonte,Interior,2024-03-14,2024-03-25,11
+Porto Alegre,Interior,2024-01-18,2024-01-27,9
+Salvador,Interior,2024-02-15,2024-02-27,12
+Porto Alegre,Interior,2024-01-01,2024-01-06,5
+Salvador,Interior,2024-02-22,2024-03-04,11
+Brasília,Interior,2024-03-13,2024-03-24,11
+São Paulo,Interior,2024-04-05,2024-04-06,1
+Recife,Interior,2024-03-15,2024-03-23,8
+Brasília,Metropolitana,2024-01-04,2024-01-07,3
+Manaus,Interior,2024-02-20,2024-02-24,4
+Recife,Metropolitana,2024-01-25,2024-02-08,14
+Rio de Janeiro,Interior,2024-04-08,2024-04-10,2
+Curitiba,Metropolitana,2024-01-06,2024-01-11,5
+Manaus,Interior,2024-03-22,2024-03-28,6
+Manaus,Metropolitana,2024-03-30,2024-04-05,6
+São Paulo,Metropolitana,2024-02-18,2024-03-04,15
+Salvador,Metropolitana,2024-01-13,2024-01-27,14
+Rio de Janeiro,Metropolitana,2024-01-19,2024-01-25,6
+Belo Horizonte,Interior,2024-03-04,2024-03-11,7
+Salvador,Interior,2024-01-02,2024-01-06,4
+Rio de Janeiro,Interior,2024-03-06,2024-03-13,7
+Belo Horizonte,Metropolitana,2024-02-09,2024-02-10,1
+Porto Alegre,Metropolitana,2024-02-29,2024-03-01,1
+Salvador,Metropolitana,2024-03-28,2024-04-06,9
+Belo Horizonte,Interior,2024-01-21,2024-02-02,12
+Curitiba,Metropolitana,2024-01-27,2024-02-06,10
+Recife,Interior,2024-03-15,2024-03-23,8
+Salvador,Interior,2024-02-16,2024-02-28,12
+Brasília,Metropolitana,2024-02-27,2024-03-06,8
+Salvador,Interior,2024-03-28,2024-04-12,15
+Curitiba,Metropolitana,2024-03-26,2024-04-01,6
+São Paulo,Metropolitana,2024-01-07,2024-01-12,5
+Brasília,Interior,2024-03-22,2024-03-29,7
+Recife,Interior,2024-02-01,2024-02-15,14
+Salvador,Interior,2024-03-30,2024-04-12,13
+Salvador,Interior,2024-01-23,2024-01-24,1
+São Paulo,Interior,2024-01-21,2024-01-22,1
+Belo Horizonte,Interior,2024-01-28,2024-02-12,15
+Recife,Metropolitana,2024-02-08,2024-02-21,13
+Rio de Janeiro,Metropolitana,2024-01-16,2024-01-25,9
+Curitiba,Interior,2024-04-09,2024-04-22,13
+Rio de Janeiro,Interior,2024-03-11,2024-03-24,13
+Manaus,Metropolitana,2024-01-26,2024-01-30,4
+Rio de Janeiro,Metropolitana,2024-03-17,2024-03-24,7
+Recife,Interior,2024-02-26,2024-03-04,7
+Recife,Interior,2024-02-10,2024-02-14,4
+Salvador,Metropolitana,2024-02-03,2024-02-05,2
+Porto Alegre,Metropolitana,2024-01-11,2024-01-23,12
+São Paulo,Metropolitana,2024-02-17,2024-02-24,7
+Manaus,Metropolitana,2024-01-24,2024-01-27,3
+São Paulo,Metropolitana,2024-03-12,2024-03-20,8
+Salvador,Metropolitana,2024-03-19,2024-03-31,12
+Belo Horizonte,Interior,2024-01-15,2024-01-30,15
+Salvador,Interior,2024-01-06,2024-01-12,6
+Curitiba,Interior,2024-03-21,2024-04-03,13
+Manaus,Interior,2024-03-01,2024-03-12,11
+Rio de Janeiro,Interior,2024-02-18,2024-02-25,7
+Manaus,Interior,2024-01-30,2024-02-05,6
+São Paulo,Interior,2024-02-14,2024-02-17,3
+Belo Horizonte,Interior,2024-02-21,2024-02-23,2
+Manaus,Interior,2024-03-08,2024-03-19,11
+Recife,Metropolitana,2024-02-12,2024-02-14,2
+Recife,Interior,2024-01-11,2024-01-15,4
+Salvador,Interior,2024-02-11,2024-02-24,13
+Porto Alegre,Interior,2024-01-18,2024-01-19,1
+São Paulo,Metropolitana,2024-02-10,2024-02-11,1
+Rio de Janeiro,Metropolitana,2024-01-28,2024-02-03,6
+Belo Horizonte,Interior,2024-03-12,2024-03-14,2
+Fortaleza,Interior,2024-03-06,2024-03-10,4
+Belo Horizonte,Metropolitana,2024-02-25,2024-03-05,9
+Belo Horizonte,Metropolitana,2024-02-18,2024-02-19,1
+Rio de Janeiro,Metropolitana,2024-01-15,2024-01-19,4
+Porto Alegre,Interior,2024-03-28,2024-04-02,5
+Rio de Janeiro,Metropolitana,2024-01-01,2024-01-03,2
+Brasília,Metropolitana,2024-03-24,2024-04-05,12
+Curitiba,Interior,2024-03-31,2024-04-07,7
+Brasília,Metropolitana,2024-03-20,2024-03-27,7
+Curitiba,Metropolitana,2024-03-22,2024-04-04,13
+Manaus,Interior,2024-02-04,2024-02-11,7
+Belo Horizonte,Interior,2024-01-25,2024-02-08,14
+Recife,Metropolitana,2024-03-28,2024-04-01,4
+Manaus,Interior,2024-03-13,2024-03-20,7
+Rio de Janeiro,Metropolitana,2024-01-27,2024-02-04,8
+Curitiba,Interior,2024-01-16,2024-01-29,13
+Rio de Janeiro,Interior,2024-04-09,2024-04-10,1
+Fortaleza,Interior,2024-02-16,2024-02-29,13
+Salvador,Metropolitana,2024-01-01,2024-01-15,14
+Curitiba,Interior,2024-01-24,2024-01-28,4
+Rio de Janeiro,Interior,2024-01-01,2024-01-13,12
+São Paulo,Metropolitana,2024-03-09,2024-03-11,2
+Belo Horizonte,Interior,2024-02-09,2024-02-23,14
+São Paulo,Interior,2024-01-19,2024-01-29,10
+Belo Horizonte,Metropolitana,2024-02-12,2024-02-22,10
+Rio de Janeiro,Interior,2024-03-14,2024-03-16,2
+Recife,Metropolitana,2024-03-01,2024-03-13,12
+Brasília,Metropolitana,2024-01-21,2024-01-27,6
+Salvador,Metropolitana,2024-02-08,2024-02-15,7
+Salvador,Interior,2024-04-02,2024-04-17,15
+Rio de Janeiro,Interior,2024-01-05,2024-01-12,7
+Manaus,Metropolitana,2024-01-02,2024-01-07,5
+Curitiba,Interior,2024-02-25,2024-02-29,4
+Recife,Metropolitana,2024-01-06,2024-01-12,6
+Belo Horizonte,Interior,2024-01-27,2024-02-04,8
+Rio de Janeiro,Metropolitana,2024-01-28,2024-02-03,6
+Porto Alegre,Metropolitana,2024-01-20,2024-01-23,3
+Rio de Janeiro,Metropolitana,2024-04-06,2024-04-08,2
+Brasília,Metropolitana,2024-01-08,2024-01-10,2
+Curitiba,Interior,2024-01-26,2024-02-10,15
+Curitiba,Metropolitana,2024-01-27,2024-02-02,6
+Manaus,Interior,2024-01-20,2024-01-31,11
+Recife,Metropolitana,2024-03-16,2024-03-28,12
+Fortaleza,Interior,2024-02-24,2024-03-03,8
+Manaus,Interior,2024-03-27,2024-04-08,12
+Curitiba,Interior,2024-01-22,2024-02-04,13
+Curitiba,Interior,2024-01-16,2024-01-25,9
+Fortaleza,Metropolitana,2024-02-29,2024-03-02,2
+Fortaleza,Interior,2024-01-11,2024-01-22,11
+Belo Horizonte,Interior,2024-02-08,2024-02-16,8
+Manaus,Metropolitana,2024-01-10,2024-01-20,10
+Manaus,Metropolitana,2024-02-05,2024-02-06,1
+Salvador,Metropolitana,2024-02-13,2024-02-15,2
+Porto Alegre,Interior,2024-04-10,2024-04-14,4
+Curitiba,Metropolitana,2024-01-27,2024-02-07,11
+Recife,Interior,2024-01-19,2024-01-30,11
+São Paulo,Metropolitana,2024-02-18,2024-02-22,4
+Belo Horizonte,Interior,2024-01-06,2024-01-11,5
+Rio de Janeiro,Metropolitana,2024-01-20,2024-01-27,7
+Belo Horizonte,Interior,2024-03-21,2024-04-01,11
+Recife,Metropolitana,2024-01-21,2024-01-23,2
+Belo Horizonte,Interior,2024-03-15,2024-03-17,2
