@@ -1,31 +1,37 @@
-from extensions import Terminal
-from components import Botao
+from time import sleep
+from typing import Callable
 
-def escrever_hello_world():
-    print('Hello World')
+from pages import MenuPage, BasePage
+from pages.decision_tree_page import DecisionTreePage
+from pages.register_page import RegisterPage
 
-def criar_saudacao(mensagem:str) -> str:
-    def saudacao(nome:str) -> str:
-        print(f'{mensagem}, {nome}')
-    return saudacao
+
+def sair(message: str) -> Callable[[], None]:
+    def exit_system():
+        print(message, end='', flush=True)
+        for _ in range(3):
+            sleep(0.5)
+            print('.', end='', flush=True)
+        print()
+        exit()
+
+    return exit_system
 
 
 def main():
-    botao = Botao()
-    bom_dia_func = criar_saudacao("Bom dia")
-    boa_noite_func = criar_saudacao("Boa noite")
-    
-    botao.Click.subscribe(escrever_hello_world)
-    botao.Click.subscribe(bom_dia_func)
-    botao.Click.subscribe(boa_noite_func)
+    opcoes_do_menu = {
+        1: ('Base Register', RegisterPage(r'assets/config.json').show),
+        2: ('Exibir Árvore de Decisão', DecisionTreePage().show),
+        3: ('Exibir SVM c/ Pipeline', None),
+        4: ('Exibir SVM s/ Pipeline', None),
+        5: ('Sair', sair("Bye Bye")),
+    }
 
-    botao.clicar("Samuel")
-    botao.clicar("Kelvin")
-    botao.clicar("Lucas")
-    botao.clicar("Caio")
-    botao.clicar("Joanderson")
-    botao.clicar("Pepê")
-    botao.clicar("Neném")
+    menu = MenuPage(opcoes_do_menu)
+    BasePage.main_page = menu
+    screen = BasePage()
+    screen.show()
+
 
 if __name__ == '__main__':
     main()

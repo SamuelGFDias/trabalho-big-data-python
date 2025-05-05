@@ -1,8 +1,11 @@
 import os
 import platform
 
+from extensions.string_extension import isnullorempty
+
+
 class Terminal:
-    
+
     @staticmethod
     def clear():
         # Detecta o sistema operacional
@@ -15,19 +18,36 @@ class Terminal:
             os.system("clear")
 
     @staticmethod
-    def read_key(message:str | None = None) -> str:
+    def read_key(message: str | None = None) -> str:
         key = input(message + '\n' if message else '' + "Pressione qualquer tecla para continuar. ")
         return key
-    
+
     @staticmethod
-    def read_number(message:str):
+    def read_number(message: str) -> int | float:
         while True:
             Terminal.clear()
-            
+
             value = input(message)
 
             if value.isnumeric():
+                if value.isdigit():
+                    value = int(value)
+                else:
+                    value = float(value)
                 return value
-            
-            Terminal.read_key()
-    
+
+            Terminal.read_key("Informe um número válido.")
+
+    @staticmethod
+    def read_string(message: str, default: str | None = None):
+        while True:
+            Terminal.clear()
+
+            value = input(message)
+
+            if not isnullorempty(value):
+                return value
+            elif default:
+                return default
+
+            Terminal.read_key("Informe um valor válido válido.")
