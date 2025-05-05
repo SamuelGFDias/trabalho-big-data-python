@@ -7,9 +7,9 @@ class JsonExtension:
 
     @staticmethod
     def load(path: str) -> list[BaseCsv]:
-        import json
         with open(path, 'r', encoding='utf-8') as f:
             raw_data = json.load(f)
+
         bases = []
         for item in raw_data:
             base = BaseCsv()
@@ -20,6 +20,15 @@ class JsonExtension:
             base.all_columns = item['all_columns']
             base.input_columns = item['input_columns']
             base.exit_columns = item['exit_columns']
+            base.categorize_fn_code = item.get('categorize_fn_code')
+
+            if base.categorize_fn_code:
+                try:
+                    base.categorize_fn = eval(base.categorize_fn_code, {"__builtins__": {}})
+                except Exception as e:
+                    print(f"[ERRO] Não foi possível interpretar categorize_fn: {e}")
+                    base.categorize_fn = None
+
             bases.append(base)
         return bases
 

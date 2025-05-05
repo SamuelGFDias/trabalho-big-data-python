@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class Page(ABC):
+class IPage(ABC):
 
     @abstractmethod
     def show(self) -> None:

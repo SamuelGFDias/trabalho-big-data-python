@@ -23,10 +23,10 @@ class Terminal:
         return key
 
     @staticmethod
-    def read_number(message: str) -> int | float:
+    def read_number(message: str, clear: bool = True) -> int | float:
         while True:
-            Terminal.clear()
-
+            if clear:
+                Terminal.clear()
             value = input(message)
 
             if value.isnumeric():
@@ -39,10 +39,10 @@ class Terminal:
             Terminal.read_key("Informe um número válido.")
 
     @staticmethod
-    def read_string(message: str, default: str | None = None):
+    def read_string(message: str, default: str | None = None, clear: bool = True):
         while True:
-            Terminal.clear()
-
+            if clear:
+                Terminal.clear()
             value = input(message)
 
             if not isnullorempty(value):

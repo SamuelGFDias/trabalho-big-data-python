@@ -1,9 +1,9 @@
 from extensions import Terminal
-from interfaces import Page
+from interfaces import IPage
 
 
-class BasePage(Page):
-    main_page: Page | None = None
+class BasePage(IPage):
+    main_page: IPage | None = None
 
     def __init__(self):
         pass

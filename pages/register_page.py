@@ -1,65 +1,56 @@
-import csv
-from pathlib import Path
-
 from domain import BaseCsv
 from extensions import JsonExtension, Terminal, isnullorempty, read_csv_columns
-from interfaces import Page
-from pages import BasePage
+from extensions.csv_extension import show_columns, get_selected_indices, get_selected_indices_safe, tentar_capturar_categorizador
+from pages import BasePage, ListablePage
+from pathlib import Path
+import pandas as pd
 
 
-class RegisterPage(BasePage, Page):
-    bases: list[BaseCsv]
-
-    def __init__(self, path: str | None = None):
+class RegisterPage(ListablePage, BasePage):
+    def __init__(self, path: str):
         super().__init__()
-        self.bases = JsonExtension.load(path) if path else []
+        self.path = path
+        if not Path(path).exists():
+            with open(path, 'w', encoding='utf-8') as f:
+                f.write("[]")
+        self.bases: list[BaseCsv] = JsonExtension.load(path)
         self.opcoes = {
             1: ('Listar Bases', self.list_bases),
             2: ('Registrar Base', self.register_base),
             3: ('Atualizar Base', self.update_base),
             4: ('Remover Base', self.remove_base),
-            5: ('Sair', super().show)
+            5: ('Sair', lambda: None)
         }
-        pass
-
-    def show(self):
-        Terminal.clear()
-
-        message = ""
-        for op in self.opcoes:
-            message += f"{op} - {self.opcoes[op][0]}\n"
-
-        message += "\nSelecione uma das opções acima: "
-
-        selected_option = Terminal.read_number(message)
-        self.opcoes[selected_option][1]()
-        self.show()
 
     def list_bases(self):
         Terminal.clear()
 
-        message = ""
-        for i, base in enumerate(self.bases):
-            message += f"{i} - {base.name}\n"
+        if not self.bases:
+            print("Nenhuma base registrada.\n")
+        else:
+            for i, base in enumerate(self.bases):
+                print(f"{i} - {base.name}")
+                print(f"  Caminho: {base.path}")
+                print(f"  Encoding: {base.encoding}")
+                print(f"  Delimitador: {base.delimiter}")
+                print(f"  Colunas: {', '.join(base.all_columns)}")
+                print(f"  Entrada: {', '.join(base.input_columns)}")
+                print(f"  Saída: {', '.join(base.exit_columns)}")
+                if base.categorize_fn_code:
+                    print(f"  Categorizar: {base.categorize_fn_code}")
+                print("-" * 50)
 
-        print(message if not isnullorempty(message) else f"Nenhuma base registrada;\n")
         Terminal.read_key()
 
     def register_base(self):
         Terminal.clear()
         print("=== Registro de Nova Base ===\n")
 
-        name = Terminal.read_string("Nome da base: ")
-        path = Terminal.read_string("Caminho do arquivo CSV: ")
-        encoding = Terminal.read_string("Encoding [utf-8]: ", default="utf-8")
-        delimiter = Terminal.read_string("Delimitador [,]: ", default=",")
+        name = Terminal.read_string("Nome da base: ", clear=False)
+        path = Terminal.read_string("Caminho do arquivo CSV: ", clear=False)
+        encoding = Terminal.read_string("Encoding [utf-8]: ", default="utf-8", clear=False)
+        delimiter = Terminal.read_string("Delimitador [,]: ", default=",", clear=False)
 
-        if not Path(path).exists():
-            print("Arquivo não encontrado.")
-            Terminal.read_key()
-            return
-
-        # Lê o cabeçalho do CSV
         try:
             columns = read_csv_columns(path, encoding, delimiter)
         except Exception as e:
@@ -67,22 +58,13 @@ class RegisterPage(BasePage, Page):
             Terminal.read_key()
             return
 
-        print("\nColunas encontradas:")
-        for i, col in enumerate(columns):
-            print(f"{i} - {col}")
+        colunas_str = show_columns(columns)
+        input_indexes = Terminal.read_string(f"{colunas_str}\n\nÍndices das colunas de entrada: ", clear=False)
+        Terminal.clear()
+        exit_indexes = Terminal.read_string(f"{colunas_str}\nÍndices das colunas de saída: ", clear=False)
 
-        # Entradas e saídas
-        input_indexes = Terminal.read_string("\nÍndices das colunas de entrada (separados por vírgula): ")
-        exit_indexes = Terminal.read_string("Índices das colunas de saída (separados por vírgula): ")
-
-        def get_selected(indices: str):
-            try:
-                return [columns[int(ind.strip())] for ind in indices.split(',') if ind.strip().isdigit()]
-            except Exception:
-                return []
-
-        input_columns = get_selected(input_indexes)
-        exit_columns = get_selected(exit_indexes)
+        input_columns = get_selected_indices(input_indexes, columns)
+        exit_columns = get_selected_indices(exit_indexes, columns)
 
         base = BaseCsv()
         base.name = name
@@ -93,9 +75,18 @@ class RegisterPage(BasePage, Page):
         base.input_columns = input_columns
         base.exit_columns = exit_columns
 
-        self.bases.append(base)
-        JsonExtension.save("assets/config.json", self.bases)
+        try:
+            df = pd.read_csv(path, encoding=encoding, sep=delimiter)
+            col_saida = exit_columns[0]
+            func_code, func = tentar_capturar_categorizador(df, col_saida)
+            base.categorize_fn_code = func_code
+            base.categorize_fn = func
+        except Exception as e:
+            print(f"Erro ao processar categorização: {e}")
+            Terminal.read_key()
 
+        self.bases.append(base)
+        JsonExtension.save(self.path, self.bases)
         print("\nBase registrada com sucesso!")
         Terminal.read_key()
 
@@ -111,23 +102,18 @@ class RegisterPage(BasePage, Page):
         for i, base in enumerate(self.bases):
             print(f"{i} - {base.name}")
 
-        idx = Terminal.read_number("\nSelecione o índice da base a atualizar: ")
-
+        idx = Terminal.read_number("\nSelecione o índice da base a atualizar: ", clear=False)
         if not (0 <= idx < len(self.bases)):
             print("Índice inválido.")
             Terminal.read_key()
             return
 
         base = self.bases[idx]
+        base.name = Terminal.read_string(f"Nome [{base.name}]: ", default=base.name, clear=False)
+        base.path = Terminal.read_string(f"Caminho [{base.path}]: ", default=base.path, clear=False)
+        base.encoding = Terminal.read_string(f"Encoding [{base.encoding or 'utf-8'}]: ", default=base.encoding or "utf-8", clear=False)
+        base.delimiter = Terminal.read_string(f"Delimitador [{base.delimiter or ','}]: ", default=base.delimiter or ",", clear=False)
 
-        # Atualiza informações básicas
-        base.name = Terminal.read_string(f"Nome [{base.name}]: ", default=base.name)
-        base.path = Terminal.read_string(f"Caminho [{base.path}]: ", default=base.path)
-        base.encoding = Terminal.read_string(f"Encoding [{base.encoding or 'utf-8'}]: ",
-                                             default=base.encoding or "utf-8")
-        base.delimiter = Terminal.read_string(f"Delimitador [{base.delimiter or ','}]: ", default=base.delimiter or ",")
-
-        # Relê colunas, se o caminho for válido
         try:
             columns = read_csv_columns(base.path, base.encoding, base.delimiter)
             base.all_columns = columns
@@ -136,29 +122,27 @@ class RegisterPage(BasePage, Page):
             Terminal.read_key()
             return
 
-        print("\nColunas encontradas:")
-        for i, col in enumerate(base.all_columns):
-            print(f"{i} - {col}")
+        colunas_str = show_columns(columns)
+        input_indexes = Terminal.read_string(f"{colunas_str}\n\nColunas de entrada atuais: {', '.join(base.input_columns)}\nÍndices das colunas de entrada: ", default=','.join(map(str, [columns.index(c) for c in base.input_columns])), clear=False)
 
-        print(f"\nColunas de entrada atuais: {', '.join(base.input_columns or [])}")
-        input_indexes = Terminal.read_string("Índices das colunas de entrada (Enter para manter): ",
-                                             default=base.input_columns)
+        Terminal.clear()
 
-        print(f"Colunas de saída atuais: {', '.join(base.exit_columns or [])}")
-        exit_indexes = Terminal.read_string("Índices das colunas de saída (Enter para manter): ",
-                                            default=base.input_columns)
+        exit_indexes = Terminal.read_string(f"{colunas_str}\nColunas de saída atuais: {', '.join(base.exit_columns)}\nÍndices das colunas de saída: ", default=','.join(map(str, [columns.index(c) for c in base.exit_columns])), clear=False)
 
-        def get_selected(indices: str, original: list[str]):
-            try:
-                return [base.all_columns[int(i.strip())] for i in indices.split(',') if i.strip().isdigit()]
-            except Exception:
-                return original
+        base.input_columns = get_selected_indices_safe(input_indexes, columns, base.input_columns)
+        base.exit_columns = get_selected_indices_safe(exit_indexes, columns, base.exit_columns)
 
-        base.input_columns = get_selected(input_indexes, base.input_columns)
-        base.exit_columns = get_selected(exit_indexes, base.exit_columns)
+        try:
+            df = pd.read_csv(base.path, encoding=base.encoding, sep=base.delimiter)
+            col_saida = base.exit_columns[0]
+            func_code, func = tentar_capturar_categorizador(df, col_saida)
+            base.categorize_fn_code = func_code
+            base.categorize_fn = func
+        except Exception as e:
+            print(f"Erro ao processar categorização: {e}")
+            Terminal.read_key()
 
-        JsonExtension.save("assets/config.json", self.bases)
-
+        JsonExtension.save(self.path, self.bases)
         print("\nBase atualizada com sucesso!")
         Terminal.read_key()
 
@@ -174,19 +158,18 @@ class RegisterPage(BasePage, Page):
         for i, base in enumerate(self.bases):
             print(f"{i} - {base.name}")
 
-        idx = Terminal.read_number("\nSelecione o índice da base a remover: ")
-
+        idx = Terminal.read_number("\nSelecione o índice da base a remover: ", clear=False)
         if not (0 <= idx < len(self.bases)):
             print("Índice inválido.")
             Terminal.read_key()
             return
 
         nome = self.bases[idx].name
-        confirm = Terminal.read_string(f"Tem certeza que deseja remover '{nome}'? (s/n): ")
+        confirm = Terminal.read_string(f"Tem certeza que deseja remover '{nome}'? (s/n): ", clear=False)
 
         if confirm.lower() == 's':
             self.bases.pop(idx)
-            JsonExtension.save("assets/config.json", self.bases)
+            JsonExtension.save(self.path, self.bases)
             print("Base removida com sucesso!")
         else:
             print("Operação cancelada.")

@@ -2,8 +2,7 @@ from time import sleep
 from typing import Callable
 
 from pages import MenuPage, BasePage
-from pages.decision_tree_page import DecisionTreePage
-from pages.register_page import RegisterPage
+from pages import DecisionTreePage, RegisterPage, SvmSemPipelinePage, SvmComPipelinePage
 
 
 def sair(message: str) -> Callable[[], None]:
@@ -19,11 +18,12 @@ def sair(message: str) -> Callable[[], None]:
 
 
 def main():
+    path = r'config.json'
     opcoes_do_menu = {
-        1: ('Base Register', RegisterPage(r'assets/config.json').show),
-        2: ('Exibir Árvore de Decisão', DecisionTreePage().show),
-        3: ('Exibir SVM c/ Pipeline', None),
-        4: ('Exibir SVM s/ Pipeline', None),
+        1: ('Base Register', RegisterPage(path).show),
+        2: ('Exibir Árvore de Decisão', DecisionTreePage(path).show),
+        3: ('Exibir SVM c/ Pipeline', SvmComPipelinePage(path).show),
+        4: ('Exibir SVM s/ Pipeline', SvmSemPipelinePage(path).show),
         5: ('Sair', sair("Bye Bye")),
     }
 

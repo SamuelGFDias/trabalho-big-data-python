@@ -1,16 +1,17 @@
 import pandas as pd
-from sklearn import tree
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
-from extensions import JsonExtension, Terminal
+from extensions import JsonExtension, Terminal, preprocessar_base
 from domain import BaseCsv
 from pages import ListablePage, BasePage
-from extensions import preprocessar_base
 
 
-class DecisionTreePage(ListablePage, BasePage):
+class SvmSemPipelinePage(ListablePage, BasePage):
     def __init__(self, path: str):
         super().__init__()
         self.base_treinada = None
@@ -20,7 +21,6 @@ class DecisionTreePage(ListablePage, BasePage):
         self.X_test = None
         self.y_test = None
         self.feature_names = []
-        self.class_names = []
 
         self.opcoes = {
             **{i: (base.name, lambda b=base: self.processar_base(b)) for i, base in enumerate(self.bases)},
@@ -33,15 +33,16 @@ class DecisionTreePage(ListablePage, BasePage):
 
         try:
             X, y = preprocessar_base(base)
+
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)
-            clf = tree.DecisionTreeClassifier()
+
+            clf = SVC(gamma='auto')
             clf.fit(X_train, y_train)
 
             self.modelo = clf
             self.X_test = X_test
             self.y_test = y_test
             self.feature_names = X.columns.tolist()
-            self.class_names = clf.classes_.tolist()
 
             print("\nModelo treinado com sucesso!\n")
 
@@ -57,11 +58,10 @@ class DecisionTreePage(ListablePage, BasePage):
     def mostrar_menu_apos_treino(self):
         while True:
             Terminal.clear()
-            print("=== Modelo Treinado ===\n")
+            print("=== Modelo Treinado (SVM + Pipeline) ===\n")
             print("1 - Mostrar acurácia")
             print("2 - Realizar predição")
-            print("3 - Exibir gráfico da árvore")
-            print("4 - Voltar\n")
+            print("3 - Voltar\n")
 
             op = Terminal.read_number("Escolha uma opção: ", clear=False)
 
@@ -77,7 +77,6 @@ class DecisionTreePage(ListablePage, BasePage):
 
                 for col in base.input_columns:
                     val = Terminal.read_string(f"{col}: ")
-
                     input_data[col] = [val]
 
                 df_input = pd.DataFrame(input_data)
@@ -100,18 +99,12 @@ class DecisionTreePage(ListablePage, BasePage):
                 temp_base.categorize_fn_code = base.categorize_fn_code
                 df_processado, _ = preprocessar_base(temp_base, df_default=df_input)
                 df_processado = df_processado.reindex(columns=self.feature_names, fill_value=0)
-                resultado = self.modelo.predict(df_processado)[0]
 
+                resultado = self.modelo.predict(df_processado)[0]
                 print(f"\nClasse prevista: {resultado}")
                 Terminal.read_key()
 
             elif op == 3:
-                plt.figure(figsize=(20, 10))
-                tree.plot_tree(self.modelo, feature_names=self.feature_names,
-                               class_names=self.class_names, filled=True)
-                plt.show()
-
-            elif op == 4:
                 break
             else:
                 print("Opção inválida.")
