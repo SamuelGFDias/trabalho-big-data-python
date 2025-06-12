@@ -38,7 +38,8 @@ def pre_processar(df: pd.DataFrame) -> pd.DataFrame:
     media_cidade = df.groupby('cidade')['dias_experados'].transform('mean')
     df['media_dias_cidade'] = media_cidade
     df['desvio_dias'] = df['dias_experados'] - media_cidade
-    # Ciclicalidade
+    
+    # Ciclicalidade para projeção de períodos cíclicos como (dias da semana e meses do ano)
     df['mes_sin'] = np.sin(2 * np.pi * df['mes_criacao'] / 12)
     df['mes_cos'] = np.cos(2 * np.pi * df['mes_criacao'] / 12)
     df['dia_sin'] = np.sin(2 * np.pi * df['dia_semana_criacao'] / 7)
@@ -49,6 +50,8 @@ def pre_processar(df: pd.DataFrame) -> pd.DataFrame:
         'data_criacao', 'data_limite',
         'mes_criacao', 'dia_semana_criacao',
     ])
+
+    # Verifico se a coluna de sáida está, e se estiver, eu excluo. (Pois essa função é usada para processar a base e a amostra que não contém a coluna de saída)
     if ('dias_para_entrega' in df.columns):
         df['status_entrega'] = df['dias_para_entrega'].apply(lambda x: 'rápido' if x <= 7 else 'lento')
         df = df.drop(columns=['dias_para_entrega'])
@@ -63,10 +66,17 @@ def obter_amostra_usuario(template_df: pd.DataFrame) -> pd.DataFrame:
         if col in ['dias_para_entrega', '']:  # não solicitar dias calculados
             continue
         if col in DataInfo.unique_values:
-            validos = DataInfo.unique_values[col]
-            print(f"Valores válidos para '{col}': {validos}")
-            valor = Terminal.read_string(f"Informe '{col}': ", clear=False)
-            entrada[col] = normalize_string(valor.strip().replace(' ', '_'))
+            while (True):
+                Terminal.clear()
+                validos = DataInfo.unique_values[col]
+                print()
+                valor = Terminal.read_string(f"Valores válidos para '{col}': {validos}\nInforme '{col}': ", clear=True)
+
+                if (valor not in validos):
+                    Terminal.read_key("Valor inválido informado.")
+                else:
+                    entrada[col] = normalize_string(valor.strip().replace(' ', '_'))
+                    break
         else:
             valor = Terminal.read_string(f"Informe '{col}': ", clear=False)
             entrada[col] = valor.strip()
@@ -182,8 +192,6 @@ def main():
 
     df['cidade'] = df['cidade'].str.strip().str.replace(' ', '_').map(normalize_string)
     df['regiao'] = df['regiao'].str.strip().str.replace(' ', '_').map(normalize_string)
-
-
 
     DataInfo.columns = df.columns.tolist()
     DataInfo.unique_values = {

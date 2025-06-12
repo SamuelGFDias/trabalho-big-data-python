@@ -4,3 +4,4 @@ class DataInfo:
     feature_columns: list[str] = None
     target_column: str = None
     raw_columns: list[str] = None
+

@@ -49,4 +49,4 @@ class Terminal:
             elif default:
                 return default
 
-            Terminal.read_key("Informe um valor válido válido.")
+            Terminal.read_key("Informe um valor válido")

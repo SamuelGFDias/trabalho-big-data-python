@@ -1,0 +1,1 @@
+Valores válidos para '{col}': {validos
