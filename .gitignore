@@ -1,0 +1,13 @@
+/.venv/
+/.vscode/
+/.idea/
+/.DS_Store
+/.pytest_cache/
+/.mypy_cache/
+/.coverage
+/.coverage.*
+/.tox/
+/.hypothesis/   
+/build/
+/dist/
+**/__pycache__/
