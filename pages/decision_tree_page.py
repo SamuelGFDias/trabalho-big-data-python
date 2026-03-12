@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from extensions import JsonExtension, Terminal
 from domain import BaseCsv
 from pages import ListablePage, BasePage
-from extensions import preprocessar_base
+from extensions import preprocessor_base
 
 
 class DecisionTreePage(ListablePage, BasePage):
@@ -31,8 +31,8 @@ class DecisionTreePage(ListablePage, BasePage):
         Terminal.clear()
         print(f"Treinando modelo para base: {base.name}\n")
 
-        try:
-            X, y = preprocessar_base(base)
+        try:    
+            X, y = preprocessor_base(base)
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)
             clf = tree.DecisionTreeClassifier()
             clf.fit(X_train, y_train)
@@ -57,13 +57,15 @@ class DecisionTreePage(ListablePage, BasePage):
     def mostrar_menu_apos_treino(self):
         while True:
             Terminal.clear()
-            print("=== Modelo Treinado ===\n")
-            print("1 - Mostrar acurácia")
-            print("2 - Realizar predição")
-            print("3 - Exibir gráfico da árvore")
-            print("4 - Voltar\n")
+            opcoes = ''
+            opcoes += '=== Modelo Treinado ===\n'
+            opcoes += "1 - Mostrar acurácia\n"
+            opcoes += "2 - Realizar predição\n"
+            opcoes += "3 - Exibir gráfico da árvore\n"
+            opcoes += "4 - Voltar\n\n"
+            opcoes += "Escolha uma opção: "
 
-            op = Terminal.read_number("Escolha uma opção: ", clear=False)
+            op = Terminal.read_number(opcoes)
 
             if op == 1:
                 y_pred = self.modelo.predict(self.X_test)
@@ -98,7 +100,7 @@ class DecisionTreePage(ListablePage, BasePage):
                 temp_base.exit_columns = base.exit_columns
                 temp_base.categorize_fn = base.categorize_fn
                 temp_base.categorize_fn_code = base.categorize_fn_code
-                df_processado, _ = preprocessar_base(temp_base, df_default=df_input)
+                df_processado, _ = preprocessor_base(temp_base, df_default=df_input)
                 df_processado = df_processado.reindex(columns=self.feature_names, fill_value=0)
                 resultado = self.modelo.predict(df_processado)[0]
 

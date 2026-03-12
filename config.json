@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Teste",
+    "path": "D:\\Dev\\Python\\BigData\\assets\\base_entregas_suprimentos.txt",
+    "encoding": "utf-8",
+    "delimiter": ",",
+    "all_columns": [
+      "Cidade",
+      "Região",
+      "Data Criação",
+      "Data Limite",
+      "Dias para Entrega"
+    ],
+    "input_columns": [
+      "Cidade",
+      "Região",
+      "Data Criação",
+      "Data Limite"
+    ],
+    "exit_columns": [
+      "Dias para Entrega"
+    ],
+    "categorize_fn_code": "lambda x: 'oi'",
+    "fillna_strategy": {
+      "Cidade": "outros"
+    }
+  }
+]

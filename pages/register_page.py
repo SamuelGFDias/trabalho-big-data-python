@@ -1,6 +1,7 @@
 from domain import BaseCsv
 from extensions import JsonExtension, Terminal, isnullorempty, read_csv_columns
-from extensions.csv_extension import show_columns, get_selected_indices, get_selected_indices_safe, tentar_capturar_categorizador
+from extensions.csv_extension import show_columns, get_selected_indices, get_selected_indices_safe, \
+    tentar_capturar_categorizador
 from pages import BasePage, ListablePage
 from pathlib import Path
 import pandas as pd
@@ -60,7 +61,6 @@ class RegisterPage(ListablePage, BasePage):
 
         colunas_str = show_columns(columns)
         input_indexes = Terminal.read_string(f"{colunas_str}\n\nÍndices das colunas de entrada: ", clear=False)
-        Terminal.clear()
         exit_indexes = Terminal.read_string(f"{colunas_str}\nÍndices das colunas de saída: ", clear=False)
 
         input_columns = get_selected_indices(input_indexes, columns)
@@ -74,6 +74,27 @@ class RegisterPage(ListablePage, BasePage):
         base.all_columns = columns
         base.input_columns = input_columns
         base.exit_columns = exit_columns
+
+        # NOVO BLOCO: Estratégia de preenchimento
+        fillna_strategy = {}
+        for col in input_columns:
+            Terminal.clear()
+            coluna_entrada = f"Coluna de entrada: {col}\n"
+            coluna_message = coluna_entrada
+            coluna_message += "Deseja definir estratégia de preenchimento para nulos? (s/n): "
+            usar_estrategia = Terminal.read_string(coluna_message, default="n")
+            if usar_estrategia.lower() == 's':
+                tipo = Terminal.read_string(
+                    coluna_message + "Tipo de estratégia ('zero', 'mediana', 'media', 'outros', ou função lambda): ",)
+                if tipo in ['zero', 'mediana', 'media', 'outros']:
+                    fillna_strategy[col] = tipo
+                elif tipo.startswith("lambda"):
+                    try:
+                        fillna_strategy[col] = eval(tipo, {"__builtins__": {}})
+                    except Exception as e:
+                        print(f"Função inválida: {e}")
+                        Terminal.read_key()
+        base.fillna_strategy = fillna_strategy
 
         try:
             df = pd.read_csv(path, encoding=encoding, sep=delimiter)
@@ -111,8 +132,10 @@ class RegisterPage(ListablePage, BasePage):
         base = self.bases[idx]
         base.name = Terminal.read_string(f"Nome [{base.name}]: ", default=base.name, clear=False)
         base.path = Terminal.read_string(f"Caminho [{base.path}]: ", default=base.path, clear=False)
-        base.encoding = Terminal.read_string(f"Encoding [{base.encoding or 'utf-8'}]: ", default=base.encoding or "utf-8", clear=False)
-        base.delimiter = Terminal.read_string(f"Delimitador [{base.delimiter or ','}]: ", default=base.delimiter or ",", clear=False)
+        base.encoding = Terminal.read_string(f"Encoding [{base.encoding or 'utf-8'}]: ",
+                                             default=base.encoding or "utf-8", clear=False)
+        base.delimiter = Terminal.read_string(f"Delimitador [{base.delimiter or ','}]: ", default=base.delimiter or ",",
+                                              clear=False)
 
         try:
             columns = read_csv_columns(base.path, base.encoding, base.delimiter)
@@ -123,14 +146,39 @@ class RegisterPage(ListablePage, BasePage):
             return
 
         colunas_str = show_columns(columns)
-        input_indexes = Terminal.read_string(f"{colunas_str}\n\nColunas de entrada atuais: {', '.join(base.input_columns)}\nÍndices das colunas de entrada: ", default=','.join(map(str, [columns.index(c) for c in base.input_columns])), clear=False)
+        input_indexes = Terminal.read_string(
+            f"{colunas_str}\n\nColunas de entrada atuais: {', '.join(base.input_columns)}\nÍndices das colunas de entrada: ",
+            default=','.join(map(str, [columns.index(c) for c in base.input_columns])), clear=False)
 
         Terminal.clear()
 
-        exit_indexes = Terminal.read_string(f"{colunas_str}\nColunas de saída atuais: {', '.join(base.exit_columns)}\nÍndices das colunas de saída: ", default=','.join(map(str, [columns.index(c) for c in base.exit_columns])), clear=False)
+        exit_indexes = Terminal.read_string(
+            f"{colunas_str}\nColunas de saída atuais: {', '.join(base.exit_columns)}\nÍndices das colunas de saída: ",
+            default=','.join(map(str, [columns.index(c) for c in base.exit_columns])), clear=False)
 
         base.input_columns = get_selected_indices_safe(input_indexes, columns, base.input_columns)
         base.exit_columns = get_selected_indices_safe(exit_indexes, columns, base.exit_columns)
+
+        # NOVO BLOCO: Estratégia de preenchimento
+        fillna_strategy = {}
+        for col in base.input_columns:
+            Terminal.clear()
+            coluna_entrada = f"Coluna de entrada: {col}\n"
+            coluna_message = coluna_entrada
+            coluna_message += "Deseja atualizar estratégia de preenchimento para nulos? (s/n): "
+            usar_estrategia = Terminal.read_string(coluna_message, default="n")
+            if usar_estrategia.lower() == 's':
+                tipo = Terminal.read_string(
+                    coluna_entrada + "Tipo de estratégia ('zero', 'mediana', 'media', 'outros', ou função lambda): ")
+                if tipo in ['zero', 'mediana', 'media', 'outros']:
+                    fillna_strategy[col] = tipo
+                elif tipo.startswith("lambda"):
+                    try:
+                        fillna_strategy[col] = eval(tipo, {"__builtins__": {}})
+                    except Exception as e:
+                        print(f"Função inválida: {e}")
+                        Terminal.read_key()
+        base.fillna_strategy = fillna_strategy
 
         try:
             df = pd.read_csv(base.path, encoding=base.encoding, sep=base.delimiter)

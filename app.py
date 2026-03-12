@@ -1,3 +1,4 @@
+import sys
 from time import sleep
 from typing import Callable
 
@@ -12,7 +13,7 @@ def sair(message: str) -> Callable[[], None]:
             sleep(0.5)
             print('.', end='', flush=True)
         print()
-        exit()
+        sys.exit()()
 
     return exit_system
 
@@ -35,3 +36,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+# pyinstaller --onefile --name BigDataApp app.py
